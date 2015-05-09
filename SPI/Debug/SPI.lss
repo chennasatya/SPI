@@ -1,0 +1,494 @@
+
+SPI.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000022e  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          000001b6  00800100  00800100  000002a2  2**0
+                  ALLOC
+  2 .comment      00000030  00000000  00000000  000002a2  2**0
+                  CONTENTS, READONLY
+  3 .debug_aranges 00000088  00000000  00000000  000002d2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   00000800  00000000  00000000  0000035a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 00000334  00000000  00000000  00000b5a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   0000039b  00000000  00000000  00000e8e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_frame  000000f8  00000000  00000000  0000122c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    000001f0  00000000  00000000  00001324  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_loc    00000455  00000000  00000000  00001514  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 000000e0  00000000  00000000  00001969  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  14:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  18:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  28:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  2c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  38:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  3c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  40:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  48:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  50:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  54:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  74:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  78:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e4       	ldi	r29, 0x40	; 64
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	ee e2       	ldi	r30, 0x2E	; 46
+  a0:	f2 e0       	ldi	r31, 0x02	; 2
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a0 30       	cpi	r26, 0x00	; 0
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+  b2:	22 e0       	ldi	r18, 0x02	; 2
+  b4:	a0 e0       	ldi	r26, 0x00	; 0
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	a6 3b       	cpi	r26, 0xB6	; 182
+  be:	b2 07       	cpc	r27, r18
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	0e 94 01 01 	call	0x202	; 0x202 <main>
+  c6:	0c 94 15 01 	jmp	0x22a	; 0x22a <_exit>
+
+000000ca <__bad_interrupt>:
+  ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <setPixel>:
+
+
+char matrix[16 * 24];
+
+void setPixel(uint16_t i) {
+	matrix[i/8] |= _BV(i%8);
+  ce:	fc 01       	movw	r30, r24
+  d0:	23 e0       	ldi	r18, 0x03	; 3
+  d2:	f6 95       	lsr	r31
+  d4:	e7 95       	ror	r30
+  d6:	2a 95       	dec	r18
+  d8:	e1 f7       	brne	.-8      	; 0xd2 <setPixel+0x4>
+  da:	ec 5f       	subi	r30, 0xFC	; 252
+  dc:	fe 4f       	sbci	r31, 0xFE	; 254
+  de:	87 70       	andi	r24, 0x07	; 7
+  e0:	99 27       	eor	r25, r25
+  e2:	21 e0       	ldi	r18, 0x01	; 1
+  e4:	30 e0       	ldi	r19, 0x00	; 0
+  e6:	01 c0       	rjmp	.+2      	; 0xea <setPixel+0x1c>
+  e8:	22 0f       	add	r18, r18
+  ea:	8a 95       	dec	r24
+  ec:	ea f7       	brpl	.-6      	; 0xe8 <setPixel+0x1a>
+  ee:	80 81       	ld	r24, Z
+  f0:	82 2b       	or	r24, r18
+  f2:	80 83       	st	Z, r24
+  f4:	08 95       	ret
+
+000000f6 <writedata>:
+	digitalWrite(CS, LOW);
+	writedata(DATA, 12);
+	digitalWrite(CS, HIGH);
+}
+
+void writedata(uint16_t d, uint8_t bits) {
+  f6:	cf 93       	push	r28
+  f8:	df 93       	push	r29
+	PINMODE(DATA);
+  fa:	24 9a       	sbi	0x04, 4	; 4
+
+void digitalWrite(int pinNum, int value)
+{
+	if(value == 0)
+	{
+		PORTB = (1 << pinNum);	
+  fc:	70 e2       	ldi	r23, 0x20	; 32
+
+void writedata(uint16_t d, uint8_t bits) {
+	PINMODE(DATA);
+	for (uint8_t i=bits; i > 0; i--) {
+		digitalWrite(WRITE, LOW);
+		if (d & _BV(i-1)) {
+  fe:	41 e0       	ldi	r20, 0x01	; 1
+ 100:	50 e0       	ldi	r21, 0x00	; 0
+
+void digitalWrite(int pinNum, int value)
+{
+	if(value == 0)
+	{
+		PORTB = (1 << pinNum);	
+ 102:	e0 e1       	ldi	r30, 0x10	; 16
+	}
+	
+	else 
+	{
+		PORTB = ~(1 << pinNum);
+ 104:	ff ee       	ldi	r31, 0xEF	; 239
+ 106:	af ed       	ldi	r26, 0xDF	; 223
+	digitalWrite(CS, HIGH);
+}
+
+void writedata(uint16_t d, uint8_t bits) {
+	PINMODE(DATA);
+	for (uint8_t i=bits; i > 0; i--) {
+ 108:	66 23       	and	r22, r22
+ 10a:	a1 f0       	breq	.+40     	; 0x134 <writedata+0x3e>
+
+void digitalWrite(int pinNum, int value)
+{
+	if(value == 0)
+	{
+		PORTB = (1 << pinNum);	
+ 10c:	75 b9       	out	0x05, r23	; 5
+
+void writedata(uint16_t d, uint8_t bits) {
+	PINMODE(DATA);
+	for (uint8_t i=bits; i > 0; i--) {
+		digitalWrite(WRITE, LOW);
+		if (d & _BV(i-1)) {
+ 10e:	2f ef       	ldi	r18, 0xFF	; 255
+ 110:	26 0f       	add	r18, r22
+ 112:	ea 01       	movw	r28, r20
+ 114:	02 c0       	rjmp	.+4      	; 0x11a <writedata+0x24>
+ 116:	cc 0f       	add	r28, r28
+ 118:	dd 1f       	adc	r29, r29
+ 11a:	2a 95       	dec	r18
+ 11c:	e2 f7       	brpl	.-8      	; 0x116 <writedata+0x20>
+ 11e:	9e 01       	movw	r18, r28
+ 120:	28 23       	and	r18, r24
+ 122:	39 23       	and	r19, r25
+ 124:	23 2b       	or	r18, r19
+ 126:	11 f0       	breq	.+4      	; 0x12c <writedata+0x36>
+		PORTB = (1 << pinNum);	
+	}
+	
+	else 
+	{
+		PORTB = ~(1 << pinNum);
+ 128:	f5 b9       	out	0x05, r31	; 5
+ 12a:	01 c0       	rjmp	.+2      	; 0x12e <writedata+0x38>
+
+void digitalWrite(int pinNum, int value)
+{
+	if(value == 0)
+	{
+		PORTB = (1 << pinNum);	
+ 12c:	e5 b9       	out	0x05, r30	; 5
+	}
+	
+	else 
+	{
+		PORTB = ~(1 << pinNum);
+ 12e:	a5 b9       	out	0x05, r26	; 5
+	digitalWrite(CS, HIGH);
+}
+
+void writedata(uint16_t d, uint8_t bits) {
+	PINMODE(DATA);
+	for (uint8_t i=bits; i > 0; i--) {
+ 130:	61 50       	subi	r22, 0x01	; 1
+ 132:	ea cf       	rjmp	.-44     	; 0x108 <writedata+0x12>
+			digitalWrite(DATA, LOW);
+		}
+		digitalWrite(WRITE, HIGH);
+	}
+	//pinMode(_data, INPUT);
+}
+ 134:	df 91       	pop	r29
+ 136:	cf 91       	pop	r28
+ 138:	08 95       	ret
+
+0000013a <sendcommand>:
+
+void digitalWrite(int pinNum, int value)
+{
+	if(value == 0)
+	{
+		PORTB = (1 << pinNum);	
+ 13a:	80 e8       	ldi	r24, 0x80	; 128
+ 13c:	85 b9       	out	0x05, r24	; 5
+	data <<= 8;
+	data |= cmd;
+	data <<= 1;
+	
+	digitalWrite(CS, LOW);
+	writedata(DATA, 12);
+ 13e:	6c e0       	ldi	r22, 0x0C	; 12
+ 140:	84 e0       	ldi	r24, 0x04	; 4
+ 142:	90 e0       	ldi	r25, 0x00	; 0
+ 144:	0e 94 7b 00 	call	0xf6	; 0xf6 <writedata>
+		PORTB = (1 << pinNum);	
+	}
+	
+	else 
+	{
+		PORTB = ~(1 << pinNum);
+ 148:	8f e7       	ldi	r24, 0x7F	; 127
+ 14a:	85 b9       	out	0x05, r24	; 5
+ 14c:	08 95       	ret
+
+0000014e <begin>:
+	}
+	//pinMode(_data, INPUT);
+}
+
+
+void begin(uint8_t type) {
+ 14e:	cf 93       	push	r28
+ 150:	c8 2f       	mov	r28, r24
+	
+	PINMODE(CS);
+ 152:	27 9a       	sbi	0x04, 7	; 4
+		PORTB = (1 << pinNum);	
+	}
+	
+	else 
+	{
+		PORTB = ~(1 << pinNum);
+ 154:	8f e7       	ldi	r24, 0x7F	; 127
+ 156:	85 b9       	out	0x05, r24	; 5
+
+void begin(uint8_t type) {
+	
+	PINMODE(CS);
+	digitalWrite(CS, HIGH);
+	PINMODE(WRITE);
+ 158:	25 9a       	sbi	0x04, 5	; 4
+		PORTB = (1 << pinNum);	
+	}
+	
+	else 
+	{
+		PORTB = ~(1 << pinNum);
+ 15a:	8f ed       	ldi	r24, 0xDF	; 223
+ 15c:	85 b9       	out	0x05, r24	; 5
+	
+	PINMODE(CS);
+	digitalWrite(CS, HIGH);
+	PINMODE(WRITE);
+	digitalWrite(WRITE, HIGH);
+	PINMODE(DATA);
+ 15e:	24 9a       	sbi	0x04, 4	; 4
+		//digitalWrite(_rd, HIGH);
+	//}
+	
+	//DDRB = (1 << PINB7) | (1 << PINB5) | (1 << PINB4);//MISO -- PB6, MOSI -- PB5, SCK - PB7, SS -- PB4
+	
+	sendcommand(HT1632_SYS_EN);
+ 160:	81 e0       	ldi	r24, 0x01	; 1
+ 162:	0e 94 9d 00 	call	0x13a	; 0x13a <sendcommand>
+	sendcommand(HT1632_LED_ON);
+ 166:	83 e0       	ldi	r24, 0x03	; 3
+ 168:	0e 94 9d 00 	call	0x13a	; 0x13a <sendcommand>
+	sendcommand(HT1632_BLINK_OFF);
+ 16c:	88 e0       	ldi	r24, 0x08	; 8
+ 16e:	0e 94 9d 00 	call	0x13a	; 0x13a <sendcommand>
+	sendcommand(HT1632_MASTER_MODE);
+ 172:	84 e1       	ldi	r24, 0x14	; 20
+ 174:	0e 94 9d 00 	call	0x13a	; 0x13a <sendcommand>
+	sendcommand(HT1632_INT_RC);
+ 178:	88 e1       	ldi	r24, 0x18	; 24
+ 17a:	0e 94 9d 00 	call	0x13a	; 0x13a <sendcommand>
+	sendcommand(type);
+ 17e:	8c 2f       	mov	r24, r28
+ 180:	0e 94 9d 00 	call	0x13a	; 0x13a <sendcommand>
+	sendcommand(HT1632_PWM_CONTROL | 0xF);
+ 184:	8f ea       	ldi	r24, 0xAF	; 175
+ 186:	0e 94 9d 00 	call	0x13a	; 0x13a <sendcommand>
+	
+	WIDTH = 24;
+ 18a:	88 e1       	ldi	r24, 0x18	; 24
+ 18c:	80 93 02 01 	sts	0x0102, r24
+	HEIGHT = 16;
+ 190:	80 e1       	ldi	r24, 0x10	; 16
+ 192:	80 93 03 01 	sts	0x0103, r24
+}
+ 196:	cf 91       	pop	r28
+ 198:	08 95       	ret
+
+0000019a <writeScreen>:
+
+void writeScreen() {
+ 19a:	cf 93       	push	r28
+ 19c:	df 93       	push	r29
+
+void digitalWrite(int pinNum, int value)
+{
+	if(value == 0)
+	{
+		PORTB = (1 << pinNum);	
+ 19e:	80 e8       	ldi	r24, 0x80	; 128
+ 1a0:	85 b9       	out	0x05, r24	; 5
+
+void writeScreen() {
+
+	digitalWrite(CS, LOW);
+
+	writedata(HT1632_WRITE, 3);
+ 1a2:	63 e0       	ldi	r22, 0x03	; 3
+ 1a4:	85 e0       	ldi	r24, 0x05	; 5
+ 1a6:	90 e0       	ldi	r25, 0x00	; 0
+ 1a8:	0e 94 7b 00 	call	0xf6	; 0xf6 <writedata>
+	// send with address 0
+	writedata(0, 7);
+ 1ac:	67 e0       	ldi	r22, 0x07	; 7
+ 1ae:	80 e0       	ldi	r24, 0x00	; 0
+ 1b0:	90 e0       	ldi	r25, 0x00	; 0
+ 1b2:	0e 94 7b 00 	call	0xf6	; 0xf6 <writedata>
+
+	for (uint16_t i=0; i<(WIDTH*HEIGHT/8); i+=2) {
+ 1b6:	c0 e0       	ldi	r28, 0x00	; 0
+ 1b8:	d0 e0       	ldi	r29, 0x00	; 0
+ 1ba:	90 91 02 01 	lds	r25, 0x0102
+ 1be:	80 91 03 01 	lds	r24, 0x0103
+ 1c2:	98 02       	muls	r25, r24
+ 1c4:	c0 01       	movw	r24, r0
+ 1c6:	11 24       	eor	r1, r1
+ 1c8:	97 fd       	sbrc	r25, 7
+ 1ca:	07 96       	adiw	r24, 0x07	; 7
+ 1cc:	43 e0       	ldi	r20, 0x03	; 3
+ 1ce:	95 95       	asr	r25
+ 1d0:	87 95       	ror	r24
+ 1d2:	4a 95       	dec	r20
+ 1d4:	e1 f7       	brne	.-8      	; 0x1ce <writeScreen+0x34>
+ 1d6:	c8 17       	cp	r28, r24
+ 1d8:	d9 07       	cpc	r29, r25
+ 1da:	70 f4       	brcc	.+28     	; 0x1f8 <writeScreen+0x5e>
+ 1dc:	fe 01       	movw	r30, r28
+ 1de:	ec 5f       	subi	r30, 0xFC	; 252
+ 1e0:	fe 4f       	sbci	r31, 0xFE	; 254
+		uint16_t d = matrix[i];
+ 1e2:	80 81       	ld	r24, Z
+ 1e4:	90 e0       	ldi	r25, 0x00	; 0
+		d <<= 8;
+ 1e6:	98 2f       	mov	r25, r24
+ 1e8:	88 27       	eor	r24, r24
+		d |= matrix[i+1];
+ 1ea:	21 81       	ldd	r18, Z+1	; 0x01
+
+		writedata(d, 16);
+ 1ec:	60 e1       	ldi	r22, 0x10	; 16
+ 1ee:	82 2b       	or	r24, r18
+ 1f0:	0e 94 7b 00 	call	0xf6	; 0xf6 <writedata>
+
+	writedata(HT1632_WRITE, 3);
+	// send with address 0
+	writedata(0, 7);
+
+	for (uint16_t i=0; i<(WIDTH*HEIGHT/8); i+=2) {
+ 1f4:	22 96       	adiw	r28, 0x02	; 2
+ 1f6:	e1 cf       	rjmp	.-62     	; 0x1ba <writeScreen+0x20>
+		PORTB = (1 << pinNum);	
+	}
+	
+	else 
+	{
+		PORTB = ~(1 << pinNum);
+ 1f8:	8f e7       	ldi	r24, 0x7F	; 127
+ 1fa:	85 b9       	out	0x05, r24	; 5
+		d |= matrix[i+1];
+
+		writedata(d, 16);
+	}
+	digitalWrite(CS, HIGH);
+}
+ 1fc:	df 91       	pop	r29
+ 1fe:	cf 91       	pop	r28
+ 200:	08 95       	ret
+
+00000202 <main>:
+	//PRR0 = 1 << PRSPI;
+	
+	
+	char buffer[10] = "11:00";
+	 
+	DDRB = (1 << PINB4) | (1 << PINB5) | (1 << PINB7);
+ 202:	80 eb       	ldi	r24, 0xB0	; 176
+ 204:	84 b9       	out	0x04, r24	; 4
+	
+	SPCR = (1 << SPE) | (1 << MSTR) | (1 << SPR0) | (1 << SPIE);
+ 206:	81 ed       	ldi	r24, 0xD1	; 209
+ 208:	8c bd       	out	0x2c, r24	; 44
+	
+	SPDR = buffer[0];
+ 20a:	81 e3       	ldi	r24, 0x31	; 49
+ 20c:	8e bd       	out	0x2e, r24	; 46
+	
+	SPSR = (1 << SPIF);
+ 20e:	80 e8       	ldi	r24, 0x80	; 128
+ 210:	8d bd       	out	0x2d, r24	; 45
+	
+	begin(1);
+ 212:	81 e0       	ldi	r24, 0x01	; 1
+ 214:	0e 94 a7 00 	call	0x14e	; 0x14e <begin>
+	setPixel(1);
+ 218:	81 e0       	ldi	r24, 0x01	; 1
+ 21a:	90 e0       	ldi	r25, 0x00	; 0
+ 21c:	0e 94 67 00 	call	0xce	; 0xce <setPixel>
+	writeScreen();
+ 220:	0e 94 cd 00 	call	0x19a	; 0x19a <writeScreen>
+	
+	
+	
+	
+	
+}
+ 224:	80 e0       	ldi	r24, 0x00	; 0
+ 226:	90 e0       	ldi	r25, 0x00	; 0
+ 228:	08 95       	ret
+
+0000022a <_exit>:
+ 22a:	f8 94       	cli
+
+0000022c <__stop_program>:
+ 22c:	ff cf       	rjmp	.-2      	; 0x22c <__stop_program>
